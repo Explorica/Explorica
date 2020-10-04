@@ -1,0 +1,15 @@
+# Ignore everything (treats as whitelist)
+/*
+
+# Include this file
+!/.gitignore
+
+# Include documentation
+!/*.md
+
+# Include configurations
+!/docker-compose.yml
+!/package*.json
+
+# Include cli
+!/.setup/

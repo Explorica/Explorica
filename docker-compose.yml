@@ -1,0 +1,43 @@
+version: "3.0"
+services:
+  #   web:
+  #     container_name: web
+  #     image: "explorica/web"
+  #     depends_on:
+  #       - mysql
+  #       - postgres
+  #     build:
+  #       context: ./web
+  #       dockerfile: Dockerfile
+  #     ports:
+  #       - "3000:3000"
+  #     restart: always
+  minecraft:
+    container_name: minecraft
+    image: marctv/minecraft-papermc-server:latest
+    depends_on:
+      - mysql
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./minecraft:/data:rw
+    ports:
+      - "${MINECRAFT_PORT}:25565"
+    restart: always
+    environment:
+      MEMORYSIZE: ${MINECRAFT_MEMORY}
+  mysql:
+    container_name: mysql
+    image: mariadb:10
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./mysql:/var/lib/mysql
+    ports:
+      - "${MYSQL_PORT}:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: gamedata
+      MYSQL_USER: ${MYSQL_USER_NAME}
+      MYSQL_PASSWORD: ${MYSQL_USER_PASSWORD}

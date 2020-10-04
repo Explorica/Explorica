@@ -1,0 +1,383 @@
+#===============================================================
+#                     VentureChat Config                       =
+#                      Author: Aust1n46                        =
+#===============================================================
+
+filters:
+
+# command without the /
+blockablecommands:
+  - vote
+  - me
+
+# blacklisted nicknames
+nicknames:
+
+nickname-in-tablist: true
+
+# {player} : player sending command
+# {command} : command typed
+commandspy:
+  format: "&6{player}: {command}"
+  worldeditcommands: true
+
+antispam:
+  enabled: false
+
+  # number of messages to be spam
+  spamnumber: 5
+
+  # amount of time in seconds for it to be spam
+  spamtime: 10
+
+  # amount of time in minutes for the mute to last, use 0 for untimed mute
+  mutetime: 10
+
+# Logging chat and commands to a mysql database
+mysql:
+  enabled: true
+  user: "%MYSQL_USERNAME%"
+  port: 3306
+  password: "%MYSQL_USERPASS%"
+  host: mysql
+  database: gamedata
+
+# Login and logout messages
+# Use Default for the vanilla login and logout messages
+login:
+  enabled: true
+  message: Default
+logout:
+  enabled: true
+  message: Default
+
+# Loglevel feature is still in the works for adding of debug messages
+# Valid loglevels:
+# Info: Regular logging
+# Debug: Show extra messages and caught errors for debugging
+# Severe: Only show severe messages
+loglevel: info
+
+# saveinterval is in minutes
+saveinterval: 30
+
+# The time in seconds between each check to remove timed mutes
+unmuteinterval: 60
+
+# Enables or disabled BungeeCord messaging
+bungeecordmessaging: false
+
+# This will allow vanished players to be exempt from being sent private messages, and will act as if they aren't online
+vanishsupport: true
+
+# {playerto} : player receivings name
+# {playerfrom} : player sendings name
+tellformatto: "#D63865To {playerto}:&7"
+tellformatfrom: "#D63865From {playerfrom}:&7"
+tellformatspy: "{playerfrom} messages {playerto}:&7"
+replyformatto: "#D63865To {playerto}:&7"
+replyformatfrom: "#D63865From {playerfrom}:&7"
+replyformatspy: "{playerfrom} replied to {playerto}:&7"
+
+# {host} : party hosts name
+# {player} : player name
+# use Default for the basic formatting
+partyformat: Default
+
+formatcleaner: true
+
+# If true, /ignore will block chat from the ignored player as well as PM's
+ignorechat: false
+
+# The message shown to players alerting them no one is in the channel to hear them
+emptychannelalert: ""
+
+messageremoverpermissions: "&cYou need additional permissions to view this message!"
+messageremovertext: "&c&o<message removed>"
+
+# The name of the group is the permissions node for the format
+# Example: venturechat.json.Owner is the node for the group Owner
+# A lower priority overrides a higher priority if a player has more than 1 group
+# Possible options for click_name and click_prefix are suggest_command, run_command, and open_url
+jsonformatting:
+  Default: # This default format is required!  Do not delete or rename it!
+    priority: 2147483647 # Integer.MAX_VALUE
+    hover_name:
+      - "&7Visitor"
+    click_name: "run_command"
+    click_name_text: "/msg {player_name}"
+    hover_prefix:
+      - "I donated!"
+    click_prefix: "open_url"
+    click_prefix_text: "http://explorica-mc.com/donate"
+    hover_suffix:
+      - "&dI am default suffix!"
+    click_suffix: "suggest_command"
+    click_suffix_text: "/msg {player_name}"
+  Citizen:
+    priority: 50
+    hover_name:
+      - "&9Citizen"
+    click_name: "run_command"
+    click_name_text: "/msg {player_name}"
+    hover_prefix:
+      - "I donated!"
+    click_prefix: "open_url"
+    click_prefix_text: "http://explorica-mc.com/donate"
+    hover_suffix:
+      - "&dI am default suffix!"
+    click_suffix: "suggest_command"
+    click_suffix_text: "/msg {player_name}"
+  Dreamer:
+    priority: 40
+    hover_name:
+      - "&2Dreamer"
+    click_name: "run_command"
+    click_name_text: "/msg {player_name}"
+    hover_prefix:
+      - "I donated!"
+    click_prefix: "open_url"
+    click_prefix_text: "http://explorica-mc.com/donate"
+    hover_suffix:
+      - "&dI am default suffix!"
+    click_suffix: "suggest_command"
+    click_suffix_text: "/msg {player_name}"
+  Maker:
+    priority: 30
+    hover_name:
+      - "&5Maker"
+    click_name: "run_command"
+    click_name_text: "/msg {player_name}"
+    hover_prefix:
+      - "I donated!"
+    click_prefix: "open_url"
+    click_prefix_text: "http://explorica-mc.com/donate"
+    hover_suffix:
+      - "&dI am default suffix!"
+    click_suffix: "suggest_command"
+    click_suffix_text: "/msg {player_name}"
+  Crafter:
+    priority: 20
+    hover_name:
+      - "&cCrafter"
+    click_name: "run_command"
+    click_name_text: "/msg {player_name}"
+    hover_prefix:
+      - "I donated!"
+    click_prefix: "open_url"
+    click_prefix_text: "http://explorica-mc.com/donate"
+    hover_suffix:
+      - "&dI am default suffix!"
+    click_suffix: "suggest_command"
+    click_suffix_text: "/msg {player_name}"
+  Artisan:
+    priority: 10
+    hover_name:
+      - "&6Artisan"
+    click_name: "run_command"
+    click_name_text: "/msg {player_name}"
+    hover_prefix:
+      - "I donated!"
+    click_prefix: "open_url"
+    click_prefix_text: "http://explorica-mc.com/donate"
+    hover_suffix:
+      - "&dI am default suffix!"
+    click_suffix: "suggest_command"
+    click_suffix_text: "/msg {player_name}"
+  Owner:
+    priority: 0
+    hover_name:
+      - "&3Peace Keeper"
+    click_name: "run_command"
+    click_name_text: "/msg {player_name}"
+    hover_prefix:
+      - "I donated!"
+    click_prefix: "open_url"
+    click_prefix_text: "http://explorica-mc.com/donate"
+    hover_suffix:
+      - "&dI am default suffix!"
+    click_suffix: "suggest_command"
+    click_suffix_text: "/msg {player_name}"
+
+# The icon is the block shown in the GUI
+# The text is the display name of the block icon
+# Include a slash (/) before the command
+# Permissions are the name of the button and automatically include "venturechat."
+# Example: mute equals venturechat.mute
+venturegui:
+  mute:
+    icon: "REDSTONE_BLOCK"
+    durability: 0
+    text: "&cMute {player_name}"
+    permission: "mute"
+    command: "/mute {player_name} {channel} 10"
+    slot: 1
+  unmute:
+    icon: "DIAMOND_BLOCK"
+    durability: 0
+    text: "&bUnmute {player_name}"
+    permission: "mute"
+    command: "/unmute {player_name} {channel}"
+    slot: 2
+  removemessage:
+    icon: "DIAMOND_AXE"
+    durability: 0
+    text: "&cRemove Message"
+    permission: "removemessage"
+    command: "/removemessage {hash} {channel}"
+    slot: 7
+
+guiicon: ""
+guitext: ""
+guirows: 1
+
+# All clickable URL's will be underlined if set to true
+underlineurls: true
+
+# broadcast information
+broadcast:
+  color: red
+  permissions: venturechat.adminchannel
+  displaytag: "[Broadcast]"
+
+# Use $ to include arguments into the message
+# Valid component types are:
+# Command: Sends a message or command in chat
+# Message: Sends a message to the player
+# Broadcast: Sends a broadcast to all players on the server
+# Permissions automatically include "venturechat."
+# Example: permissions: alert equals venturechat.alert
+# Use None for no permissions
+# The number of arguments is the minimum number of required arguments, use 0 for no required arguments
+alias:
+  msg:
+    arguments: 0
+    permissions: None
+    components:
+      - "Command: /vmessage$"
+  message:
+    arguments: 0
+    permissions: None
+    components:
+      - "Command: /vmessage$"
+
+# Enables the creation of special Towny channels: Town and Nation
+# To create these channels, simply name two channels below "Town" and "Nation"
+# Bungeecord must be set to false for these channels!
+enable_towny_channel: false
+
+# Enables the creation of a special faction only channel using the Factions plugin
+# To create this channel, simply name a channel below "Faction"
+# Bungeecord must be set to false for this channel!
+# WARNING: May not work for all versions of Factions!
+enable_factions_channel: false
+
+# color = [channel] color
+# chatcolor = text color
+# cooldown is in seconds
+# bungeecord overrides distance
+# channel permissions are configurable
+# channels can be changed, and new channels can be created
+# Permissions automatically include "venturechat."
+# Example: permissions: staff equals venturechat.staff
+# Use None for no permissions
+
+# Use PlaceholderAPI placeholders are required!!!
+# Use PlaceholderAPI placeholders are required!!!
+# Use PlaceholderAPI placeholders are required!!!
+# /papi ecloud download [plugin]
+# /papi reload
+# Use '' or "" around format, example: '[&2global&f] {vault_prefix} {player_displayname}&2:'
+# You must have prefixes and suffixes set in a Vault compatible permissions plugin to avoid errors
+# Use "" as the prefix or suffix to have none
+
+# Set chatcolor to 'None' to have a group based chat color! Don't forget to put a suffix or other placeholder at the end of the format!
+
+# Important!!!
+# Important!!!
+# If you delete a channel, restart the server! Do not use /chatreload!!!
+channels:
+  Global:
+    color: blue
+    chatcolor: gray
+    mutable: false
+    filter: false
+    autojoin: true
+    default: true
+    distance: 0
+    cooldown: 0
+    bungeecord: false
+    alias: g
+    permissions: "None"
+    speak_permissions: None
+    format: "&9[g] {vault_prefix}{player_displayname} &8({multiverse_world_alias}):&7"
+  Local:
+    color: dark_aqua
+    chatcolor: gray
+    mutable: true
+    filter: false
+    autojoin: true
+    default: false
+    distance: 256
+    cooldown: 0
+    bungeecord: false
+    alias: l
+    permissions: "channel.local"
+    speak_permissions: None
+    format: "&3[l] {vault_prefix}{player_displayname} &8({multiverse_world_alias}):&7"
+  Dreamer:
+    color: dark_green
+    chatcolor: gray
+    mutable: false
+    filter: false
+    autojoin: true
+    default: false
+    distance: 0
+    cooldown: 0
+    bungeecord: false
+    alias: d
+    permissions: "channel.dreamer"
+    speak_permissions: None
+    format: "&2[b] {vault_prefix}{player_displayname} &8({multiverse_world_alias}):&7"
+  Maker:
+    color: dark_purple
+    chatcolor: gray
+    mutable: false
+    filter: false
+    autojoin: true
+    default: false
+    distance: 0
+    cooldown: 0
+    bungeecord: false
+    alias: m
+    permissions: "channel.maker"
+    speak_permissions: None
+    format: "&5[d] {vault_prefix}{player_displayname} &8({multiverse_world_alias}):&7"
+  Crafter:
+    color: red
+    chatcolor: gray
+    mutable: false
+    filter: false
+    autojoin: true
+    default: false
+    distance: 0
+    cooldown: 0
+    bungeecord: false
+    alias: c
+    permissions: "channel.crafter"
+    speak_permissions: None
+    format: "&c[e] {vault_prefix}{player_displayname}&7 &8({multiverse_world_alias}):&7"
+  Artisan:
+    color: gold
+    chatcolor: gray
+    mutable: false
+    filter: false
+    autojoin: true
+    default: false
+    distance: 0
+    cooldown: 0
+    bungeecord: false
+    alias: a
+    permissions: "channel.artisan"
+    speak_permissions: None
+    format: "&6[a] {vault_prefix}{player_displayname}&7 &8({multiverse_world_alias}):&7"

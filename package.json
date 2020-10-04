@@ -1,0 +1,32 @@
+{
+  "name": "explorica",
+  "version": "1.0.0",
+  "description": "Docker tools to run all of the Explorica services.",
+  "main": "index.js",
+  "scripts": {
+    "setup": "node .setup/index.js",
+    "build": "docker-compose build",
+    "start": "docker-compose up -d",
+    "stop": "docker-compose down",
+    "console:minecraft": "docker attach minecraft",
+    "console:mysql": "docker attach mysql"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Explorica/Explorica.git"
+  },
+  "author": "Explorica",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Explorica/Explorica/issues"
+  },
+  "homepage": "https://github.com/Explorica/Explorica#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "axios": "^0.20.0",
+    "chalk": "^4.1.0",
+    "glob": "^7.1.6",
+    "inquirer": "^7.3.3",
+    "moment": "^2.29.0"
+  }
+}

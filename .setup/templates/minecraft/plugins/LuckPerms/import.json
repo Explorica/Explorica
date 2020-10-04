@@ -1,0 +1,240 @@
+{
+  "groups": {
+    "owner": {
+      "nodes": [
+        {
+          "type": "permission",
+          "key": "bukkit.*",
+          "value": true
+        },
+        {
+          "type": "permission",
+          "key": "luckperms.*",
+          "value": true
+        },
+        {
+          "type": "permission",
+          "key": "minecraft.*",
+          "value": true
+        },
+        {
+          "type": "permission",
+          "key": "venturechat.*",
+          "value": true
+        },
+        {
+          "type": "display_name",
+          "key": "displayname.Peace Keeper",
+          "value": true
+        },
+        {
+          "type": "prefix",
+          "key": "prefix.1000.&3",
+          "value": true
+        },
+        {
+          "type": "weight",
+          "key": "weight.1000",
+          "value": true
+        }
+      ]
+    },
+    "artisan": {
+      "nodes": [
+        {
+          "type": "permission",
+          "key": "venturechat.channel.artisan",
+          "value": true
+        },
+        {
+          "type": "permission",
+          "key": "venturechat.json.Artisan",
+          "value": true
+        },
+        {
+          "type": "display_name",
+          "key": "displayname.Artisan",
+          "value": true
+        },
+        {
+          "type": "inheritance",
+          "key": "group.crafter",
+          "value": true
+        },
+        {
+          "type": "prefix",
+          "key": "prefix.500.&6",
+          "value": true
+        },
+        {
+          "type": "weight",
+          "key": "weight.500",
+          "value": true
+        }
+      ]
+    },
+    "crafter": {
+      "nodes": [
+        {
+          "type": "permission",
+          "key": "venturechat.channel.crafter",
+          "value": true
+        },
+        {
+          "type": "permission",
+          "key": "venturechat.json.Crafter",
+          "value": true
+        },
+        {
+          "type": "display_name",
+          "key": "displayname.Crafter",
+          "value": true
+        },
+        {
+          "type": "inheritance",
+          "key": "group.maker",
+          "value": true
+        },
+        {
+          "type": "prefix",
+          "key": "prefix.400.&c",
+          "value": true
+        },
+        {
+          "type": "weight",
+          "key": "weight.400",
+          "value": true
+        }
+      ]
+    },
+    "maker": {
+      "nodes": [
+        {
+          "type": "permission",
+          "key": "venturechat.channel.maker",
+          "value": true
+        },
+        {
+          "type": "permission",
+          "key": "venturechat.json.Maker",
+          "value": true
+        },
+        {
+          "type": "display_name",
+          "key": "displayname.Maker",
+          "value": true
+        },
+        {
+          "type": "inheritance",
+          "key": "group.dreamer",
+          "value": true
+        },
+        {
+          "type": "prefix",
+          "key": "prefix.300.&2",
+          "value": true
+        },
+        {
+          "type": "weight",
+          "key": "weight.300",
+          "value": true
+        }
+      ]
+    },
+    "dreamer": {
+      "nodes": [
+        {
+          "type": "permission",
+          "key": "venturechat.channel.dreamer",
+          "value": true
+        },
+        {
+          "type": "permission",
+          "key": "venturechat.json.Dreamer",
+          "value": true
+        },
+        {
+          "type": "display_name",
+          "key": "displayname.Dreamer",
+          "value": true
+        },
+        {
+          "type": "inheritance",
+          "key": "group.citizen",
+          "value": true
+        },
+        {
+          "type": "prefix",
+          "key": "prefix.200.&5",
+          "value": true
+        },
+        {
+          "type": "weight",
+          "key": "weight.200",
+          "value": true
+        }
+      ]
+    },
+    "citizen": {
+      "nodes": [
+        {
+          "type": "permission",
+          "key": "venturechat.channel.local",
+          "value": true
+        },
+        {
+          "type": "permission",
+          "key": "venturechat.json.Citizen",
+          "value": true
+        },
+        {
+          "type": "display_name",
+          "key": "displayname.Citizen",
+          "value": true
+        },
+        {
+          "type": "inheritance",
+          "key": "group.default",
+          "value": true
+        },
+        {
+          "type": "prefix",
+          "key": "prefix.100.&9",
+          "value": true
+        },
+        {
+          "type": "weight",
+          "key": "weight.100",
+          "value": true
+        }
+      ]
+    },
+    "default": {
+      "nodes": [
+        {
+          "type": "display_name",
+          "key": "displayname.Visitor",
+          "value": true
+        },
+        {
+          "type": "prefix",
+          "key": "prefix.0.&7",
+          "value": true
+        }
+      ]
+    }
+  },
+  "tracks": {
+    "ranks": {
+      "groups": [
+        "default",
+        "citizen",
+        "dreamer",
+        "maker",
+        "crafter",
+        "artisan",
+        "owner"
+      ]
+    }
+  }
+}
